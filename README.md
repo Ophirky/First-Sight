@@ -1,5 +1,5 @@
- powered by: "O.N.M. Software"
+####powered by: "O.N.M. Software"####
 # First Sight #
 
-this website started as a joke but has evolved a lot.
+This website started as a joke but has evolved a lot.<br />
 with our algorithm, you will (hopefully) find the love of your life.
