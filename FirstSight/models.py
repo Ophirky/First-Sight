@@ -21,4 +21,4 @@ class Users(db.Model, UserMixin):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"User(name={self.name}, id={self.id}, mail={self.mail})"
+        return f"User(name={self.name}, id={self.id}, mail={self.email})"
