@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    body {
+        background-color: var(--gray);
+    }
+
+    #nav-bar {
+        top: 0;
+        background-color: var(--blue);
+    }
+
+    #content {
+        text-align: center;
+        padding-top: 60px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        margin-top: 50px;
+    }
+    .left section, .right section {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        padding: 5%;
+
+        background-color: var(--blue);
+        width: 30%;
+        height: 200px;
+
+        border-radius: 15px;
+        margin-top: 40px;
+    }
+
+    .right section{
+        float: right;
+        margin-right: 50px;
+    }
+
+    .left section {
+        margin-left: 50px;
+        background-color: #6caee0;
+
+    }
+
+    .last-right {
+        margin-bottom: 50px;
+    }
+
+    #title h1 {
+        text-decoration: underline 5px;
+    }
+
+</style>    
+{% endblock %}
+
+{% block body %}
+<div id="content">
+
+    <div id="title">
+        <h1 class="hebrew-title">
+            :משפטי פתיחה שנונים
+        </h1>
+    </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את באמבלבי? כי את נראית אש היום <br><br>
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את מצבר? כי אני לא יכול לתפקד בלעדייך<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                אני מרגיש כמו צריח כי אני לא מצליח להפסיק להסתכל עלייך<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את מדיבאג? כי להיות איתך ייפתור לי הכל<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את מאברגרין? כי אני מרגיש שמשהו צומח בינינו<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את מצוות מערכות? כי חשמלת את הלב שלי<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את מפלאש? כי היופי שלך מסנוור<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את בצוות תכנה? כי גרמת ללב שלי לקרוס<br /><br />    
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את מספייקס? כי עשית לי חור בלב<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את מהמוסד? כי אני מרגל אחרי הלב שלך כבר שנים<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את מ-G3? כי הלב שלי מנצנץ כשאני רואה אותך<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את 1942? כי את נראית כמו הסינדרלה שלי<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את מליידיז פירסט? כי את הבחורה הראשונה בלב שלי<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left">
+            <section>
+                <h2>
+                תגידי את מרד פיראטס? כי נראה לי שדדת לי את הלב<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title right">
+            <section>
+                <h2>
+                תגידי את ממרינרס? כי הלב שלי הפליג אלייך<br /><br />
+                </h2>
+            </section>
+            
+        </div>
+        <div class=" hebrew-title left last-right">
+            <section>
+                <h2>
+                תגידי את מארטמיס? כי ירית חץ לתוך הלב שלי<br /><br />
+                </h2>
+                
+            </section>
+        </div>
+</div>
+
+{% endblock %}

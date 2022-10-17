@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Sight</title>
+
+    <link rel="shortcut icon" href="../static/img/logo-no-bg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/packages/fontawesome-free-6.1.1-web/css/all.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --white: #f7f7f7;
+            --blue: #0965ae;
+            --red: #ef1c24;
+            --gray: #231f20;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        @font-face {
+            font-family: "Heebo";
+            src: url("../static/fonts/NGSpv5_NC0k9P_v6ZUCbLRAHxK1EbiuccQ.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "First-English-Bd";
+            src: url("../static/fonts/HelveticaNeueLTStd-Bd.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        .english-title {
+            font-family: "First-English-Bd";
+        }
+        
+        .hebrew-title {
+            font-family: "Heebo";
+            color: var(--white);
+        }
+
+        #nav-bar {
+
+            display: flex;
+            align-items: center;
+            justify-content: end;
+
+            position: fixed;
+
+            width: 100%;
+            height: 60px;
+            transition: background-color .2s linear;
+            z-index: 2345654323456754356754325676565;
+            background-color: #0965ae;
+        }
+
+        #nav-bar ul {
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+
+            width: calc(100% / 2.5);
+        }
+
+        #nav-bar ul li a {
+            font-family: "Heebo";
+            color: white;
+            text-decoration: none;
+            font-size: 150%;
+            transition: .1s linear;
+
+            padding: 10px;
+            border-radius: 15px;
+
+        }
+
+        #nav-bar ul li a:hover {
+            color: rgb(223, 222, 222);
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+  
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+    </style>
+
+    {% block head %}
+        
+    {% endblock %}
+</head>
+<body>
+    <nav id="nav-bar">
+        <ul>
+            <li>
+                <a href="/#section-1">
+                    בית
+                </a>
+            </li>
+            <li>
+                <a href="/#section-3">
+                    התנתקות
+                </a>
+            </li>
+            <li>
+                <a href="/#section-4">
+                    משתמש
+                </a>
+            </li>
+            <li>
+                <a href="/#section-5">
+                    התאמות
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+   {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+   {% endwith %} 
+
+    {% block body %}
+        
+    {% endblock %}
+</body>
+</html>

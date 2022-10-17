@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% block head %}
+    <style>
+        html{
+            background-color: #f3f3f3;
+        }
+        #nav-bar {
+            background-color: var(--blue);
+            top: 0;
+        }
+        .form-labels-on-top{
+            box-sizing: border-box;
+            max-width: 475px;
+            margin: 0 auto;
+            margin-top: 15vh;
+            padding: 55px;
+        
+            background-color:  #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        
+            font: bold 14px sans-serif;
+            text-align: center;
+        }
+        
+        .form-labels-on-top .form-row{
+            text-align: right;
+            max-width: 315px;
+            margin: 25px auto 0;
+        }
+        
+        .form-labels-on-top .form-title-row{
+            margin: 0 auto 40px;
+        }
+        
+        .form-labels-on-top h1{
+            display: inline-block;
+            box-sizing: border-box;
+            color: #4C565E;
+            font-size: 24px;
+            padding: 0 0 12px 0;
+            margin: 0;
+            border-bottom: 2px solid #6CAEE0;
+        }
+        
+        .form-labels-on-top .form-row > label span{
+            float: right;
+            display: block;
+            box-sizing: border-box;
+            color:  #5f5f5f;
+            width: 200px;
+            padding: 0 0 12px;
+        }
+        
+        .form-labels-on-top input{
+            direction: rtl;
+            color:  #5f5f5f;
+            box-sizing: border-box;
+            width: 300px;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 12px 18px;
+            border: 1px solid #dbdbdb;
+        }
+        
+        .form-labels-on-top input[type=checkbox]{
+            box-shadow: none;
+            width: auto;
+        }
+        
+        .form-labels-on-top select{
+            background-color: #ffffff;
+            color:  #5f5f5f;
+            box-sizing: border-box;
+            width: 240px;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 12px 18px;
+            border: 1px solid #dbdbdb;
+        }
+        
+        .form-labels-on-top .form-radio-buttons > div{
+            margin-bottom: 10px;
+        }
+        
+        .form-labels-on-top .form-radio-buttons label span{
+            margin-left: 8px;
+            color:  #5f5f5f;
+            font-weight: normal;
+        }
+        
+        .form-labels-on-top .form-radio-buttons input{
+            width: auto;
+        }
+        
+        .form-labels-on-top button{
+            border-radius: 2px;
+            background-color:  #6caee0;
+            color: #ffffff;
+            font-weight: bold;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 14px 22px;
+            border: 0;
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        /*	Making the form responsive. Remove this media query
+            if you don't need the form to work on mobile devices. */
+        
+        @media (max-width: 600px) {
+        
+            .form-labels-on-top{
+                padding: 30px;
+            }
+        
+            .form-labels-on-top input{
+                width: 240px;
+            }
+        
+        }
+        
+    </style>
+{% endblock %}
+{% block body %}
+<form class="form-labels-on-top" method="post" action="">
+
+    {{ form.hidden_tag() }}
+
+    <div class="form-title-row">
+        <h1>!יאללה</h1>
+        <h3>😉בוא נמצא לך צ'וצ'ות</h3>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>שם</span>
+        </label>
+        {% if form.name.errors %}
+            {{ form.name(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.name }}
+        {% endif %}
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>מייל</span>
+            {% if form.email.errors %}
+            {{ form.email(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.email }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>גיל</span>
+        {% if form.age.errors %}
+            {{ form.age(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.age.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.age }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>קבוצה</span>
+        {% if form.team.errors %}
+            {{ form.team(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.team.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.team }}
+        {% endif %}
+
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>מגדר</span>
+        {% if form.gender.errors %}
+            {{ form.gender(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.gender.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.gender }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>תאריך לידה</span>
+        {% if form.date_of_birth.errors %}
+            {{ form.date_of_birth(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.date_of_birth.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.date_of_birth }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>תחביבים (להפריד עם פסיק)</span>
+        {% if form.hobbies.errors %}
+            {{ form.hobbies(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.hobbies.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.hobbies }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>תאר את האישיות שלך במילה אחת</span>
+        {% if form.one_word_about_user.errors %}
+            {{ form.one_word_about_user(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.one_word_about_user.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.one_word_about_user }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>?מה חברים שלך חושבים עליך</span>
+        {% if form.friends_opinion.errors %}
+            {{ form.friends_opinion(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.friends_opinion.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.friends_opinion }}
+        {% endif %}
+        </label>
+    </div>
+    
+    <div class="form-row">
+        <label>
+            <span>סיסמא</span>
+        {% if form.password.errors %}
+            {{ form.password(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.password }}
+        {% endif %}
+        </label>
+    </div>
+            
+    <div class="form-row">
+        <label>
+            <span>אשר סיסמא</span>
+        {% if form.password_con.errors %}
+            {{ form.password_con(class="invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.password_con.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            {{ form.password_con }}
+        {% endif %}
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>תמונת פרופיל</span>
+            {% if form.profile_image.errors %}
+                {% for error in form.profile_image.errors %}
+                    <span class="text-danger">{{error }}</span><br>
+                {% endfor %}
+            {% endif %}
+        </label>
+    </div>
+
+    <div class="form-row">
+        <label>
+            <span>
+                בסימון ✅ בריבוע האישור את/ה מאשר/ת כי קראת את <a href="">תנאי השימוש ופרטיות</a> ואת/ה מסכים לעקוב אחרי הנחיותם
+            </span>
+            <input type="checkbox" name="checkbox" required>
+        </label>
+    </div>
+
+    <div class="form-row">
+        {{ form.submit }}
+    </div>
+</form>
+{% endblock %}
