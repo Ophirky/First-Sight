@@ -526,7 +526,7 @@
     </section>
 
     <section class="section" id="section-4">
-        <form class="form-login" method="post" action="#">
+        <form class="form-login" method="post" action="{{ url_for('home_page') }}">
             {{ form.hidden_tag() }}
 
             <div class="form-log-in-with-email">
