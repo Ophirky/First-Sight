@@ -54,10 +54,11 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+
         }
 
         #section-2 #container {
-            background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url("../static/img/home-section-1-image.jpg") fixed;
+            background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)) fixed;
             border-radius: 50% 50% 0 0;
             width: inherit;
             height: inherit;
@@ -561,7 +562,7 @@
                                 {% endfor %}
                             </div>
                         {% else %}
-                            {{ form.password(placeholder="מייל") }}
+                            {{ form.password(placeholder="סיסמא") }}
                         {% endif %}
                         </label>
                     </div>
